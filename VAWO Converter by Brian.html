@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport">
+<meta charset="UTF-8" content="width=device-width, initial-scale=1">
+<title>VAWO Converter by Brian</title>
+<style>
+*{transition:0.5s;}
+body{
+font-family:arial;
+text-align:center;
+align-content:center;
+background-size:cover;
+  background: #100720;
+  color: white;
+}
+header{
+  font-size: 20px;
+  animation-name: change;
+  animation-duration:10s;
+  animation-literation-count: infinite;
+  animation-direction: reverse;
+  text-align: center;
+text-shadow:1px 2px 3px black;
+margin-bottom:100px;
+padding-top:10px;  
+padding-bottom:30px;
+letter-spacing:3px;
+  height:100px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 1rem;
+  border: none;
+  position: relative;
+  background-image: radial-gradient(
+  circle farthest-corner at 10% 20%, 
+  rgba(255,94,247,1) 17.8%, 
+  rgba(2,245,255,1) 100.2%);
+ 
+}
+
+ @keyframes change{
+from{
+  background-image: radial-gradient(
+  circle farthest-corner at 10% 20%, 
+  rgba(255,94,247,1) 17.8%, 
+  rgba(2,245,255,1) 100.2%);  
+}   
+to{
+  background-image: radial-gradient(
+  circle farthest-corner at 5% 10%, 
+  rgba(254,93,246,1) 15.8%, 
+  rgba(1,244,254,1) 90.2%);
+   filter: blur(5px);
+}   
+ } 
+#power{
+margin-top: 50px;
+margin-bottom: 50px;  
+border:none; 
+}
+#voltage{
+border:none; 
+margin-top: 50px;
+margin-bottom: 50px;
+}
+#resistance{
+border:none; 
+margin-top: 50px;
+margin-bottom: 50px;
+}
+#current{
+border:none; 
+margin-top: 50px;
+margin-bottom: 50px;
+}
+#power:hover{
+ background: transparent;
+  color: white;
+}
+#voltage:hover{
+ background: transparent;
+  color: white;
+}
+#resistance:hover{
+ background: transparent;
+  color: white;
+}
+#current:hover{
+ background: transparent;
+  color: white;
+}
+button{
+
+}
+button:hover{
+
+}
+#text{
+  margin-top: 300px;
+  margin-bottom: 500px;
+width: 300px;
+  height: 70px;  
+color:white;
+}
+#text:hover{
+color:white;
+}
+#text:visited{
+color:white;
+}
+button{
+width:100%;
+  height:70px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 1rem;
+  border: none;
+  position: relative;
+  background: #100720;
+  transition: 0.5s;
+}
+button::after{
+content: ''; 
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+  circle farthest-corner at 10% 20%, 
+  rgba(255,94,247,1) 17.8%, 
+  rgba(2,245,255,1) 100.2%);
+  filter: blur(15px);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+button:active{
+transform: scale(0.9) rotate(1deg);
+  background: radial-gradient(circle
+  farthest-corner at 10% 20%,rgba(
+  255,94,247,1) 17.8%, rgba(2,245,255,1)
+  100.2%);
+  transition: 0.1s;
+}
+#container{
+display: flex;
+flex-direction: column;
+flexwrap: wrap;
+justify-content: center;  
+}
+</style>
+</head>
+<body id="wallpaper">
+
+<section id="before">
+  <img src="logo.jpg" width="300px" height="200px" style="margin-top:100px;">  
+<h1>Voltage, Amp, Watt & Ohm - Converter</h1>
+<p id="pass">Please enter the password first to use the application</p>
+<p><button id="text" onclick="enter()">Enter password</button></p>
+<p id="hint"></p>
+<hr></hr>
+<br></br>
+<p>By <h2 style="font-family:verdana; letter-spacing:6px;"><span style="font-family:Bauhaus 93;">Brian</span> - Code&reg;</h2></p>
+</section>
+
+<section id="content">
+<header>
+<h2>VAWO Converter</h2>
+<p>By Brian<p>
+</header>
+<br></br>
+
+<p>This will help you convert Power,Voltage,Resistance and Current.</p>
+<p>-Based on electronic formulas-</p>
+<label>Theme</label>
+<select>
+<option onclick="light()">Light</option>
+<option onclick="dark()">Dark</option>
+</select>
+
+  <div id="container">
+<div id="power">
+<p style="color:white;"><b>POWER</b></p>
+<button id="btn1" onclick="btn1()">Press to enter Current and Voltage</button>
+<p id="output1">No input</p>
+</div>
+
+<div id="voltage">
+<p style="color:white;"><b>VOLTAGE</b></p>
+<button id="btn2" onclick="btn2()">Press to enter Current and Resistance</button>
+<p id="output2">No input</p>
+</div>
+
+<div id="resistance">
+<p style="color:white;"><b>RESISTANCE</b></p>
+<button id="btn3" onclick="btn3()">Press to enter Voltage and Current</button>
+<p id="output3">No input</p>
+</div>
+
+<div id="current">
+<p style="color:white;"><b>CURRENT</b></p>
+<button id="btn4" onclick="btn4()">Press to enter Power and Voltage</button>
+<p id="output4">No input</p>
+</div>
+  </div>   
+<br></br>
+<input type="reset"/>
+<br></br>
+
+<p id="info" style="display:none; font-size:10px;">
+B-Code, B-Tech, B-Arts are small companies that were founded by a young 19year old boy called
+"Enginneer,Artist,Programmer:Lubanga Brian". It started in Jan 2023 eventhough there were not 
+enough resources and lack of working equipment & tools, this boy managed to be able to have a 
+vision to have his own companies and to be self-employed. He says all the glory is for God 
+who made him what he is right now and for the knowledge he has.He is still accomplishing more 
+day by day and learning more about his proffessions to give his best.
+
+</p>
+
+<footer><p style="font-size:12px;">About us:Founded Jan/20/2023 by Programmer Lubanga Brian</p>
+<p>Contacts:lubangabrian422@gmail.com / +256 708342651</p>
+<p>Credits:CODEJIKO, Grasshopper, Notepad++</p>
+ <a href="https://www.w3schools.com">I want to learn coding</a><br></br>
+  <button style="background:black; border:none; width:130px;" onclick="dibutton()">About:B-Code</button>
+</footer>
+
+</section>
+
+<script>
+ //password//
+ var content = document.getElementById("content");
+ content.style.display="none";
+ function enter(){
+var password = prompt("Enter the password");
+var pass = document.getElementById("pass");
+var before = document.getElementById("before");
+var text = document.getElementById("text");
+var hint = document.getElementById("hint");
+
+if(password=="VAWO"){
+before.style.display="none";
+content.style.display="block";
+}else{
+before.style.display="block";
+content.style.display="none";
+pass.style.color="red";
+hint.innerText="Password hint: first four letters of application of the application";
+pass.innerText="wrong password"; 
+text.innerText="RETRY";
+text.style.color="white";
+wallpaper.style.background="#100720";
+hint.style.color="white";
+}
+}
+
+alert("This is the VAWO converter by programmer/engineer Brian");
+//power//
+function btn1(){
+var I = prompt("Enter the current(Amps)");
+var V = prompt("Enter the voltage(Volts)");
+var output1 = document.getElementById("output1");
+output1.innerText= "The power is "+I*V+" Watts.";
+}
+//voltage//
+ function btn2(){
+var I = prompt("Enter the current(Amps)");
+var P = prompt("Enter the power(Watts)");
+var output2 = document.getElementById("output2");
+output2.innerText="The voltage is "+P/I+" Volts."; 
+ }
+ //resistance//
+ function btn3(){
+ var V = prompt("Enter the voltage(Volts)");
+ var I = prompt("Enter the current(Amps)");
+ var output3 = document.getElementById("output3");
+ output3.innerText="The resistance is "+V/I+" Ohms.";
+ }
+ //current//
+ function btn4(){
+ var P = prompt("Enter the power(Watts)");
+ var V = prompt("Enter the voltage(Volts)");
+ var output4 = document.getElementById("output4");
+ output4.innerText="The current is "+P/V+" Amps";
+ }
+ //Themes//
+ function light(){
+   var btn1 = document.getElementById("btn1");
+  var btn2 = document.getElementById("btn2");
+  var btn3 = document.getElementById("btn3");
+  var btn4 = document.getElementById("btn4");
+ var wallpaper = document.getElementById("wallpaper");
+ var btn = document.getElementById("btn");
+ wallpaper.style.background="powderblue";
+ wallpaper.style.color="black";
+  btn1.style.color="black";
+ btn2.style.color="black";
+ btn3.style.color="black";
+ btn4.style.color="black";
+ }
+ function dark(){
+  var btn1 = document.getElementById("btn1");
+  var btn2 = document.getElementById("btn2");
+  var btn3 = document.getElementById("btn3");
+  var btn4 = document.getElementById("btn4");
+ var wallpaper = document.getElementById("wallpaper");
+ wallpaper.style.background="black";
+ wallpaper.style.color="white";
+ btn1.style.color="white";
+ btn2.style.color="white";
+ btn3.style.color="white";
+ btn4.style.color="white";
+ }
+
+function dibutton(){
+var info = document.getElementById("info");
+info.style.display= "block";
+
+}
+</script>
+</body>
+</html>
